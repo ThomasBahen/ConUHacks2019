@@ -10,7 +10,10 @@ import {
 } from 'react-native';
 import { WebBrowser } from 'expo';
 
+import { TestComponent } from './../components/AppComponents';
+
 import { MonoText } from '../components/StyledText';
+import * as firebase from 'firebase';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -31,6 +34,8 @@ export default class HomeScreen extends React.Component {
               style={styles.welcomeImage}
             />
           </View>
+
+          <TestComponent />
 
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
@@ -101,7 +106,7 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#4ad484',
   },
   developmentModeText: {
     marginBottom: 20,
@@ -136,13 +141,13 @@ const styles = StyleSheet.create({
     color: 'rgba(96,100,109, 0.8)',
   },
   codeHighlightContainer: {
-    backgroundColor: 'rgba(0,0,0,0.05)',
+    backgroundColor: 'rgba(5,0,100,0.05)',
     borderRadius: 3,
     paddingHorizontal: 4,
   },
   getStartedText: {
     fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
+    color: 'rgba(96,0,109, 1)',
     lineHeight: 24,
     textAlign: 'center',
   },
