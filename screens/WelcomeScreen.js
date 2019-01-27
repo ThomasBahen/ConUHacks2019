@@ -10,8 +10,6 @@ export default class WelcomeScreen extends React.Component {
     render(){
         return(
             <ScrollView style={{backgroundColor: '#C4E691'}}>
-                
-                <Text h4 style={styles.heading}>Welcome to</Text>
                 <Image source={require('../assets/images/GardenGangLogo.png')} 
                 style={{width: 250, height:250, alignSelf: 'center'}}/>
                 <UserLoginForm signIn={this._signIn} signUp={this._signUp}/>

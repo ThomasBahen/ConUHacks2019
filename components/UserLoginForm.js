@@ -31,7 +31,7 @@ export default class UserLoginForm extends React.Component {
 }
 const styles = StyleSheet.create({
     subheading :{
-        textAlign: 'center'
-        
+        textAlign: 'center',
+        color: '#052266'
     }
 });

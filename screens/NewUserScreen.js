@@ -22,7 +22,8 @@ export default class NewUserScreen extends React.Component {
                     raised
                     small
                     onPress= {this._createAccount}
-                    backgroundColor='#052266'
+                    backgroundColor='#C4E691'
+                    textStyle={{color:'#052266'}}
                     style={{paddingTop:50}}
                 />
             </View>
