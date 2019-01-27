@@ -1,23 +1,37 @@
 import React from 'react';
-import NewUserForm from '../components/NewUserForm.js';
 import UserLoginForm from '../components/UserLoginForm.js'
-import {View, ScrollView, StyleSheet} from 'react-native';
-import {Divider, Text} from 'react-native-elements';
+import { ScrollView, StyleSheet, Image} from 'react-native';
+import { Text} from 'react-native-elements';
 
 export default class WelcomeScreen extends React.Component {
+    static navigationOptions ={
+        
+    };
     render(){
         return(
-            <ScrollView>
-                <Text h2 style= {styles.subheading}> Welcome to NAme!</Text>
-                <UserLoginForm/>
+            <ScrollView style={{backgroundColor: '#C4E691'}}>
+                
+                <Text h4 style={styles.heading}>Welcome to</Text>
+                <Image source={require('../assets/images/GardenGangLogo.png')} 
+                style={{width: 250, height:250, alignSelf: 'center'}}/>
+                <UserLoginForm signIn={this._signIn} signUp={this._signUp}/>
             </ScrollView>
-            
         );
+        
+    }
+    _signIn= () =>{
+        this.props.navigation.navigate('Main');
+    };
+    _signUp= () =>{
+        this.props.navigation.navigate('SignUp');
     }
 }
 const styles = StyleSheet.create({
-    subheading :{
-        textAlign: 'center'
+    heading :{
+        textAlign: 'center',
+        paddingTop: 50,
+
         
     }
 });
+const SignInStack=({SignIn: WelcomeScreen });

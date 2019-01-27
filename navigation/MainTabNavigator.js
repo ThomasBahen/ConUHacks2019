@@ -9,7 +9,7 @@ import SettingsScreen from '../screens/SettingsScreen';
 import WelcomeScreen from '../screens/WelcomeScreen';
 
 const HomeStack = createStackNavigator({
-  Home: WelcomeScreen,
+  Home: HomeScreen,
 });
 
 HomeStack.navigationOptions = {
@@ -41,7 +41,7 @@ LinksStack.navigationOptions = {
 };
 
 const SettingsStack = createStackNavigator({
-  Settings: WelcomeScreen,
+  Settings: SettingsScreen,
 });
 
 SettingsStack.navigationOptions = {
@@ -51,6 +51,7 @@ SettingsStack.navigationOptions = {
       focused={focused}
       name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
     />
+    
   ),
 };
 
