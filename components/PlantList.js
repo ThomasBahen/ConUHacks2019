@@ -2,7 +2,21 @@ import React, { Component } from "react";
 import { View, Text, FlatList, ActivityIndicator } from "react-native";
 import { List, ListItem, SearchBar } from "react-native-elements";
 
+import * as  firebase from 'firebase';
+
+const FirebaseConfig = {
+    apiKey: "AIzaSyACDQ94TQ0Selo-YeVY76P912h98kv1SkI",
+    authDomain: "conuhacks2019-48a54.firebaseapp.com",
+    databaseURL: "https://conuhacks2019-48a54.firebaseio.com",
+    projectId: "conuhacks2019-48a54",
+    storageBucket: "conuhacks2019-48a54.appspot.com",
+    messagingSenderId: "736717386236"
+}
+  firebase.initializeApp(FirebaseConfig)
+  
+
 class PlantList extends Component {
+  
   constructor(props) {
     super(props);
 
@@ -21,23 +35,10 @@ class PlantList extends Component {
   }
 
   makeRemoteRequest = () => {
-    const { page, seed } = this.state;
-    const url = `https://randomuser.me/api/?seed=${seed}&page=${page}&results=20`;
-    this.setState({ loading: true });
-
-    fetch(url)
-      .then(res => res.json())
-      .then(res => {
-        this.setState({
-          data: page === 1 ? res.results : [...this.state.data, ...res.results],
-          error: res.error || null,
-          loading: false,
-          refreshing: false
-        });
-      })
-      .catch(error => {
-        this.setState({ error, loading: false });
-      });
+   db.collection('Gardens').get().then((snapshot) => {
+        console.log(snapshot.docs);
+   })
+  
   };
 
   handleRefresh = () => {

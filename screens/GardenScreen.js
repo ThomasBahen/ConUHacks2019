@@ -2,6 +2,7 @@ import React from 'react';
 import { ScrollView, StyleSheet , Button, FlatList, Text, Alert} from 'react-native';
 import PlantList from '../components/PlantList.js';
 import PlantModal from '../components/PlantModal.js';
+
 export default class GardenScreen extends React.Component {
   static navigationOptions = {
     title: 'My Garden',
